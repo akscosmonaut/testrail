@@ -61,13 +61,17 @@ type SendableCase struct {
 	Milestone       int          `json:"custom_milestone,omitempty"`
 	MultiSelect     []int        `json:"custom_multi-select,omitempty"`
 	Steps           []CustomStep `json:"custom_steps,omitempty"`
+	StepsSeparated  []CustomStep `json:"custom_steps_separated,omitempty"`
 	String          string       `json:"custom_string,omitempty"`
 	TemplateId      int          `json:"template_id,omitempty"`
 	TestDescription string       `json:"custom_test_description,omitempty"`
 	Text            string       `json:"custom_text,omitempty"`
 	URL             string       `json:"custom_url,omitempty"`
 	User            int          `json:"custom_user,omitempty"`
+	Precondition    string       `json:"custom_preconds,omitempty"`
+	CustomState    	int	     	 `json:"custom_state"`
 }
+
 
 // GetCase returns the existing Test Case caseID
 func (c *Client) GetCase(caseID int) (Case, error) {
